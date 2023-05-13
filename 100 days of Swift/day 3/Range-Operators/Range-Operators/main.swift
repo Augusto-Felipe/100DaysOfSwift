@@ -7,5 +7,18 @@
 
 import Foundation
 
-print("Hello, World!")
+// Range Operators
+
+let score = 85
+
+switch score {
+case 0..<50:
+    print("Not Close")
+case 50..<100:
+    print("Close")
+case 85:
+    print("You got it.")
+default:
+    print("Too far")
+}
 
