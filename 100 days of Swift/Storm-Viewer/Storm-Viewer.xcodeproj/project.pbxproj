@@ -81,6 +81,7 @@
 				504807462A1C030A005E266E /* ViewController.swift */,
 				504807482A1C030A005E266E /* Main.storyboard */,
 				504807562A1C05A0005E266E /* Content */,
+				5048074B2A1C030B005E266E /* Assets.xcassets */,
 				5048074D2A1C030B005E266E /* LaunchScreen.storyboard */,
 				504807502A1C030B005E266E /* Info.plist */,
 			);
@@ -100,7 +101,6 @@
 				504807602A1C05C6005E266E /* nssl0049.jpg */,
 				504807572A1C05C6005E266E /* nssl0051.jpg */,
 				504807582A1C05C6005E266E /* nssl0091.jpg */,
-				5048074B2A1C030B005E266E /* Assets.xcassets */,
 			);
 			path = Content;
 			sourceTree = "<group>";
