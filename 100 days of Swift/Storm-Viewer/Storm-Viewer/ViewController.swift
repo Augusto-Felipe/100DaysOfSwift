@@ -14,6 +14,11 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Storm Viewer"
+        
+        // Esta tela deve ter um título grande
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         // Com este tipo, podemos trabalhar com arquivos
         let fm = FileManager.default
         
@@ -48,7 +53,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let vc = storyboard?.instantiateViewController(identifier: "Detail") as? DetailViewController {
+            vc.selectedImage = pictures[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 

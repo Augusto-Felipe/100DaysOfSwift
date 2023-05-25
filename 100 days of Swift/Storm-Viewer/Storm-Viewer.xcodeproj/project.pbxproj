@@ -23,6 +23,7 @@
 		504807682A1C05C6005E266E /* nssl0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5048075E2A1C05C6005E266E /* nssl0042.jpg */; };
 		504807692A1C05C6005E266E /* nssl0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5048075F2A1C05C6005E266E /* nssl0043.jpg */; };
 		5048076A2A1C05C6005E266E /* nssl0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504807602A1C05C6005E266E /* nssl0049.jpg */; };
+		506A64882A1CFB4200794162 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506A64872A1CFB4200794162 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		5048075E2A1C05C6005E266E /* nssl0042.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0042.jpg; sourceTree = "<group>"; };
 		5048075F2A1C05C6005E266E /* nssl0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0043.jpg; sourceTree = "<group>"; };
 		504807602A1C05C6005E266E /* nssl0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nssl0049.jpg; sourceTree = "<group>"; };
+		506A64872A1CFB4200794162 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				504807422A1C030A005E266E /* AppDelegate.swift */,
 				504807442A1C030A005E266E /* SceneDelegate.swift */,
 				504807462A1C030A005E266E /* ViewController.swift */,
+				506A64872A1CFB4200794162 /* DetailViewController.swift */,
 				504807482A1C030A005E266E /* Main.storyboard */,
 				504807562A1C05A0005E266E /* Content */,
 				5048074B2A1C030B005E266E /* Assets.xcassets */,
@@ -189,6 +192,7 @@
 				504807472A1C030A005E266E /* ViewController.swift in Sources */,
 				504807432A1C030A005E266E /* AppDelegate.swift in Sources */,
 				504807452A1C030A005E266E /* SceneDelegate.swift in Sources */,
+				506A64882A1CFB4200794162 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
