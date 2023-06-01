@@ -12,12 +12,17 @@ class DetailViewController: UIViewController {
     @IBOutlet var placeImageView: UIImageView!
     
     var selectedImage: String?
+    var selectedPictureNumber: Int?
+    var totalPictures: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Propriedade Title
         // Aqui não precisamos fazer unwrap pois estamos atribuindo um string opcional na outra.
-        title = selectedImage
+        
+        title = "Imagem \(selectedPictureNumber ?? 0) de \(totalPictures ?? 0)"
+        
         // Essa tela não deve ter um título grande
         navigationItem.largeTitleDisplayMode = .never
         
