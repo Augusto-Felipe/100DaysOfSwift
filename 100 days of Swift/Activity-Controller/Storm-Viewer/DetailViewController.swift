@@ -35,6 +35,7 @@ class DetailViewController: UIViewController {
         if let imageToLoad = selectedImage {
             placeImageView.image = UIImage(named: imageToLoad)
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,9 +58,15 @@ class DetailViewController: UIViewController {
             return
         }
         
+        guard let imageName = selectedImage
+        else {
+            print("Image not found.")
+            return
+        }
+        
         // Uma tela vai subir com a imagem salva para que possamos salva-lá.
         // O UIActivityViewController nos permite compartilhar dados com outros apps e devices, nesse caso estamos criando um UIActivityViewController e passando nossa imagem como parâmetro.
-        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        let vc = UIActivityViewController(activityItems: [image, imageName], applicationActivities: [])
         
         // Aqui estamos dizendo que nossa tela de compartilhamento vai aparecer a partir do momento que clicarmos no nosso right bar button item.
         vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem

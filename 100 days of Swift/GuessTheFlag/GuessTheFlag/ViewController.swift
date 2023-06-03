@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         button2.layer.borderColor = UIColor.lightGray.cgColor
         button3.layer.borderColor = UIColor.lightGray.cgColor
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
         askQuestion()
     }
     
@@ -51,6 +53,17 @@ class ViewController: UIViewController {
         
         // Lógica -> estamos pegando apenas os 3 primeiros itens da lista, demos um shuffle para sempre troca-los e em seguida geramos um numero randômico entre 0 e 2
         title = "\(countries[correctAnswer].uppercased()) Score = \(score)"
+    }
+    
+    @objc func shareTapped() {
+//        let vc = UIActivityViewController(activityItems: [String(score)], applicationActivities: [])
+//        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+//        present(vc, animated: true)
+        
+        let vc = UIAlertController(title: "Score", message: "Seu score é \(score)", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        vc.addAction(action)
+        present(vc, animated: true)
     }
     
     func resetQuiz(action: UIAlertAction! = nil) {

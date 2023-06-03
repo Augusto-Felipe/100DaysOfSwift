@@ -23,6 +23,8 @@ class DetailViewController: UIViewController {
         
         title = "Imagem \(selectedPictureNumber ?? 0) de \(totalPictures ?? 0)"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+        
         // Essa tela não deve ter um título grande
         navigationItem.largeTitleDisplayMode = .never
         
@@ -43,5 +45,15 @@ class DetailViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.hidesBarsOnTap = false
     }
-
+    
+    @objc func shareTapped() {
+        let text = "Baixe meu aplicativo"
+        if let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String {
+            let vc = UIActivityViewController(activityItems: [appName], applicationActivities: [])
+            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+            present(vc, animated: true)
+        } else {
+            print("Nome do aplicativo não encontrado.")
+        }
+    }
 }
