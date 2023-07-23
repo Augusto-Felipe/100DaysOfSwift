@@ -8,7 +8,6 @@
 import UIKit
 import WebKit
 
-
 class ViewController: UIViewController {
     
     var webView: WKWebView?
@@ -21,9 +20,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
-        
     }
     
     @objc func openTapped() {
@@ -53,9 +50,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: WKNavigationDelegate {
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
     }
-    
 }
