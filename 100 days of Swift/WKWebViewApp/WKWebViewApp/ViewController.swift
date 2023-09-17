@@ -11,6 +11,8 @@ import WebKit
 class ViewController: UIViewController {
     
     var webView: WKWebView?
+    var progressView: UIProgressView?
+    var websites = ["apple.com", "hackingwithswift.com"]
     
     override func loadView() {
         webView = WKWebView()
@@ -18,9 +20,22 @@ class ViewController: UIViewController {
         self.view = webView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
+        navigationController?.navigationBar.barTintColor = .white
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView?.reload))
+        progressView = UIProgressView(progressViewStyle: .default)
+        progressView?.sizeToFit()
+        let progressButton = UIBarButtonItem(customView: progressView ?? UIProgressView())
+        toolbarItems = [progressButton, space, refresh]
+        navigationController?.isToolbarHidden = false
+        webView?.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
     }
     
     @objc func openTapped() {
@@ -46,6 +61,12 @@ class ViewController: UIViewController {
         // Nos permite usar o swipe na tela
         webView?.allowsBackForwardNavigationGestures = true
         
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            progressView?.progress = Float(webView?.estimatedProgress ?? Double())
+        }
     }
 }
 
